@@ -1,569 +1,826 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trung Tâm Tin Học EduTech - Bứt Phá Công Nghệ</title>
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-main: #f2f2f2;
-            --text-dark: #2d2d86;
-            --primary-brand: #2d2d86;
-            --primary-hover: #1e1e5c;
-            --card-bg: #ffffff;
-            --accent-color: #4a4ae6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinhomes Grand Park - Chuẩn Sống Thượng Lưu Tại TP. Thủ Đức</title>
+<meta name="description" content="Vinhomes Grand Park - Đại đô thị công viên đẳng cấp tại TP. Thủ Đức. Khám phá không gian sống xanh, tiện ích vượt trội và cơ hội đầu tư sinh lời hấp dẫn. Đăng ký tư vấn ngay hôm nay!">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-        /* Header / Navbar */
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(45, 45, 134, 0.08);
-        }
+<style>
+  :root {
+    --bg-main: #f2f2f2;
+    --bg-card: #ffffff;
+    --primary: #2d2d86;
+    --primary-hover: #1c1c5e;
+    --text-secondary: #555555;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --shadow-soft: 0 10px 30px rgba(45, 45, 134, 0.08);
+    --shadow-strong: 0 20px 45px rgba(45, 45, 134, 0.18);
+    --transition: all 0.3s ease;
+  }
 
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-brand) !important;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+  * { box-sizing: border-box; }
 
-        .nav-link {
-            color: var(--text-dark) !important;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+  html { scroll-behavior: smooth; }
 
-        .nav-link:hover {
-            color: var(--accent-color) !important;
-        }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
 
-        /* Buttons */
-        .btn-brand {
-            background-color: var(--primary-brand);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            border: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(45, 45, 134, 0.2);
-        }
+  h1, h2, h3, h4 {
+    color: var(--primary);
+    font-weight: 700;
+  }
 
-        .btn-brand:hover {
-            background-color: var(--primary-hover);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(45, 45, 134, 0.3);
-        }
+  a { text-decoration: none; }
 
-        .btn-outline-brand {
-            border: 2px solid var(--primary-brand);
-            color: var(--primary-brand);
-            font-weight: 600;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            background: transparent;
-            transition: all 0.3s ease;
-        }
+  .btn-navy {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7rem 1.8rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .btn-navy:hover, .btn-navy:focus {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
 
-        .btn-outline-brand:hover {
-            background-color: var(--primary-brand);
-            color: #ffffff;
-        }
+  .btn-outline-navy {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    padding: 0.7rem 1.8rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .btn-outline-navy:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+  }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 90px 0 70px 0;
-            background: linear-gradient(135deg, rgba(45, 45, 134, 0.04) 0%, rgba(255, 255, 255, 0.8) 100%);
-        }
+  /* ===== NAVBAR ===== */
+  .navbar-custom {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    transition: var(--transition);
+  }
 
-        .hero-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            line-height: 1.25;
-        }
+  .navbar-brand-custom {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary) !important;
+    font-size: 1.5rem;
+  }
 
-        .hero-title span {
-            color: var(--accent-color);
-        }
+  .nav-link-custom {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    margin: 0 0.6rem;
+    position: relative;
+    transition: var(--transition);
+  }
+  .nav-link-custom:hover { color: var(--primary) !important; }
 
-        .hero-desc {
-            font-size: 1.15rem;
-            color: #4a4a6a;
-            margin-top: 1.25rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
+  /* ===== HERO ===== */
+  .hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
+    overflow: hidden;
+  }
 
-        .hero-badge {
-            background-color: rgba(45, 45, 134, 0.1);
-            color: var(--primary-brand);
-            font-weight: 600;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
+  .hero-badge {
+    display: inline-block;
+    background-color: rgba(45, 45, 134, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
 
-        /* Features / Courses Section */
-        .features-section {
-            padding: 80px 0;
-        }
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+  }
 
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
+  .hero-desc {
+    font-size: 1.1rem;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
 
-        .section-subtitle {
-            text-align: center;
-            color: #555577;
-            margin-bottom: 3.5rem;
-            font-size: 1.05rem;
-        }
+  .hero-img-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+    transform: translateY(0);
+  }
+  .hero-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .hero-img-wrap:hover img { transform: scale(1.04); }
 
-        .feature-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid rgba(45, 45, 134, 0.1);
-            padding: 2.2rem 1.8rem;
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-        }
+  /* ===== SECTION GENERIC ===== */
+  section { padding: 90px 0; }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(45, 45, 134, 0.15);
-            border-color: rgba(45, 45, 134, 0.3);
-        }
+  .section-title {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom: 1rem;
+  }
 
-        .icon-box {
-            width: 65px;
-            height: 65px;
-            border-radius: 14px;
-            background-color: rgba(45, 45, 134, 0.08);
-            color: var(--primary-brand);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
+  .section-subtitle {
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto 3rem auto;
+  }
 
-        .feature-card:hover .icon-box {
-            background-color: var(--primary-brand);
-            color: #ffffff;
-        }
+  .about-img {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+  }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .card-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
+  /* ===== FEATURE CARDS ===== */
+  .feature-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    height: 100%;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+    border-color: rgba(45,45,134,0.1);
+  }
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem auto;
+  }
 
-        .card-text {
-            color: #555577;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
+  /* ===== AMENITIES GRID ===== */
+  .amenity-item {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 100%;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+  }
+  .amenity-item:hover {
+    background-color: var(--primary);
+    transform: translateY(-6px);
+  }
+  .amenity-item:hover .amenity-icon {
+    background-color: #fff;
+    color: var(--primary);
+  }
+  .amenity-item:hover h5, .amenity-item:hover p { color: #fff; }
 
-        .course-tag {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            background-color: rgba(74, 74, 230, 0.1);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            display: inline-block;
-            width: fit-content;
-        }
+  .amenity-icon {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    border-radius: 50%;
+    background-color: rgba(45,45,134,0.1);
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin: 0 auto 1rem auto;
+    transition: var(--transition);
+  }
+  .amenity-item h5 { font-size: 1rem; margin-bottom: 0.3rem; transition: var(--transition); }
+  .amenity-item p { font-size: 0.85rem; margin-bottom: 0; transition: var(--transition); }
 
-        /* Footer */
-        footer {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            border-top: 1px solid rgba(45, 45, 134, 0.1);
-            padding-top: 50px;
-            padding-bottom: 25px;
-        }
+  /* ===== GALLERY ===== */
+  .gallery-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    height: 320px;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  .gallery-item:hover img { transform: scale(1.12); }
 
-        footer h5 {
-            font-weight: 700;
-            color: var(--primary-brand);
-            margin-bottom: 1.25rem;
-        }
+  /* ===== CTA & FORM ===== */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem;
+    color: #fff;
+    box-shadow: var(--shadow-strong);
+  }
+  .cta-banner h2 { color: #fff; }
+  .cta-banner p { color: rgba(255,255,255,0.85); }
 
-        footer p, footer li {
-            color: #555577;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
+  .form-control-custom {
+    border-radius: var(--radius-sm);
+    border: none;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-control-custom:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
+  }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
+  .btn-submit-form {
+    background-color: #fff;
+    color: var(--primary);
+    font-weight: 700;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    width: 100%;
+  }
+  .btn-submit-form:hover {
+    background-color: #e8e8ff;
+    transform: translateY(-2px);
+  }
 
-        footer ul li a {
-            color: #555577;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: #1c1c5e;
+    color: rgba(255,255,255,0.75);
+    padding: 60px 0 20px 0;
+  }
+  footer h5 { color: #fff; font-weight: 700; margin-bottom: 1.2rem; }
+  footer a {
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-bottom: 0.6rem;
+    transition: var(--transition);
+  }
+  footer a:hover { color: #fff; padding-left: 4px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-        footer ul li a:hover {
-            color: var(--primary-brand);
-        }
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(45, 45, 134, 0.08);
-            margin-top: 40px;
-            padding-top: 20px;
-            font-size: 0.9rem;
-            color: #777799;
-            text-align: center;
-        }
+  /* ===== SUCCESS POPUP ===== */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(28, 28, 94, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+  .popup-overlay.show { opacity: 1; visibility: visible; }
 
-        .social-icons a {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background-color: rgba(45, 45, 134, 0.06);
-            color: var(--primary-brand);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+  .popup-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background-color: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-strong);
+    padding: 2.8rem 2.2rem 2.2rem;
+    text-align: center;
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+  .popup-overlay.show .popup-box { transform: scale(1) translateY(0); opacity: 1; }
 
-        .social-icons a:hover {
-            background-color: var(--primary-brand);
-            color: #ffffff;
-        }
-    </style>
+  .popup-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(45, 45, 134, 0.08);
+    color: var(--primary);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .popup-close:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transform: rotate(90deg);
+  }
+
+  .popup-icon-wrap {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: #fff;
+    font-size: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(45, 45, 134, 0.35);
+    animation: popupIconPop 0.5s ease;
+  }
+  @keyframes popupIconPop {
+    0% { transform: scale(0) rotate(-20deg); }
+    70% { transform: scale(1.15) rotate(8deg); }
+    100% { transform: scale(1) rotate(0); }
+  }
+
+  .popup-title { margin-bottom: 0.8rem; }
+  .popup-desc { margin-bottom: 2rem; }
+  .popup-desc strong { color: var(--primary); }
+
+  .btn-popup-ok {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    padding: 0.85rem 2.2rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .btn-popup-ok i { font-size: 1.2rem; }
+  .btn-popup-ok:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  @media (max-width: 480px) {
+    .popup-box { padding: 2.2rem 1.5rem 1.8rem; }
+  }
+
+  @media (max-width: 991px) {
+    .hero-section { min-height: auto; padding-top: 120px; }
+    .cta-banner { padding: 2rem; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top py-3">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <i class="bi bi-cpu-fill text-primary"></i> TTTH EduTech
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" href="#hero">Trang chủ</a>
-                        </li>
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" href="#features">Khóa học nổi bật</a>
-                        </li>
-                        <li class="nav-item me-lg-3">
-                            <a class="nav-link" href="#footer">Liên hệ</a>
-                        </li>
-                        <li class="nav-item mt-3 mt-lg-0">
-                            <button class="btn btn-brand btn-sm px-3" data-bs-toggle="modal" data-bs-target="#registerModal">
-                                Đăng Ký Ngay
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main style="padding-top: 70px;">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <div class="row align-items-center gy-5">
-                    <div class="col-lg-7 text-start">
-                        <div class="hero-badge">
-                            <i class="bi bi-stars"></i> Trung Tâm Tin Học Chất Lượng Cao
-                        </div>
-                        <h1 class="hero-title">
-                            Bứt Phá Sự Nghiệp Với <span>MOS, Java & Công Nghệ AI</span>
-                        </h1>
-                        <p class="hero-desc">
-                            Chương trình đào tạo thực chiến từ cơ bản đến nâng cao. Chuẩn hóa kỹ năng tin học văn phòng quốc tế MOS, làm chủ ngôn ngữ lập trình Java hàng đầu và ứng dụng AI vào tối ưu hóa 300% hiệu suất công việc.
-                        </p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#registerModal">
-                                <i class="bi bi-rocket-takeoff me-2"></i>Đăng Ký Tư Vấn Ngay
-                            </button>
-                            <a href="#features" class="btn btn-outline-brand">
-                                Khám Phá Khóa Học
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 text-center">
-                        <div class="p-4 rounded-4 bg-white shadow-lg border border-1 border-light text-start">
-                            <div class="d-flex align-items-center gap-3 mb-4">
-                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle text-primary">
-                                    <i class="bi bi-mortarboard-fill fs-3"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0 fw-bold">Khóa Học Mới Nhất</h5>
-                                    <small class="text-muted">Khai giảng hàng tuần</small>
-                                </div>
-                            </div>
-                            <ul class="list-unstyled mb-0">
-                                <li class="d-flex align-items-center gap-2 mb-3">
-                                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                    <span>Chứng chỉ MOS chuẩn quốc tế</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-2 mb-3">
-                                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                    <span>Lập trình Java xây dựng ứng dụng thực tế</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-2 mb-3">
-                                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                    <span>Làm chủ các công cụ AI (ChatGPT, Claude...)</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-2">
-                                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                    <span>Hỗ trợ thực hành 1-1 cùng giảng viên</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features / Courses Section -->
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2 class="section-title">Các Khóa Học Nổi Bật</h2>
-                <p class="section-subtitle">Lộ trình học tập tinh gọn, chú trọng thực hành giúp bạn làm chủ công nghệ nhanh chóng</p>
-
-                <div class="row g-4">
-                    <!-- Feature Card 1: MOS -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
-                            <div class="icon-box">
-                                <i class="bi bi-file-earmark-word-fill"></i>
-                            </div>
-                            <span class="course-tag mb-2">Chứng Chỉ Quốc Tế</span>
-                            <h3 class="card-title">Tin Học Văn Phòng MOS</h3>
-                            <p class="card-text">
-                                Làm chủ trọn bộ Microsoft Office (Word, Excel, PowerPoint). Rèn luyện kỹ năng xử lý dữ liệu và văn bản chuyên nghiệp, cam kết chuẩn đầu ra đạt chứng chỉ quốc tế MOS.
-                            </p>
-                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">Thời lượng: 6 tuần</span>
-                                <a href="mos-ai.html" class="btn btn-sm btn-outline-brand">Chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature Card 2: Java -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
-                            <div class="icon-box">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <span class="course-tag mb-2">Lập Trình Chuyên Nghiệp</span>
-                            <h3 class="card-title">Lập Trình Java Thực Chiến</h3>
-                            <p class="card-text">
-                                Từ tư duy lập trình căn bản, OOP đến thiết kế ứng dụng và kiến trúc phần mềm với Java. Chuẩn bị nền tảng vững chắc cho công việc lập trình viên Backend chuyên nghiệp.
-                            </p>
-                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">Thời lượng: 12 tuần</span>
-                                <button class="btn btn-sm btn-outline-brand" onclick="openRegister('Khóa học Java')">Chi tiết</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature Card 3: AI -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
-                            <div class="icon-box">
-                                <i class="bi bi-robot"></i>
-                            </div>
-                            <span class="course-tag mb-2">Xu Hướng Công Nghệ</span>
-                            <h3 class="card-title">Ứng Dụng AI Vào Công Việc</h3>
-                            <p class="card-text">
-                                Hướng dẫn sử dụng hiệu quả các công cụ Trí Tuệ Nhân Tạo (ChatGPT, Midjourney, AI Automation) nhằm tự động hóa quy trình, sáng tạo nội dung và nhân bội hiệu suất công việc.
-                            </p>
-                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
-                                <span class="fw-bold text-primary">Thời lượng: 4 tuần</span>
-                                <a href="course-ai.html" class="btn btn-sm btn-outline-brand">Chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Modal Đăng Ký -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4">
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold text-primary" id="registerModalLabel">Đăng Ký Tư Vấn Khóa Học</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body pt-3">
-                    <form id="consultForm" onsubmit="handleFormSubmit(event)">
-                        <div class="mb-3">
-                            <label for="fullName" class="form-label fw-semibold">Họ và tên</label>
-                            <input type="text" class="form-field form-control" id="fullName" placeholder="Nhập họ và tên của bạn" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phoneNumber" class="form-label fw-semibold">Số điện thoại</label>
-                            <input type="tel" class="form-field form-control" id="phoneNumber" placeholder="Nhập số điện thoại" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="courseSelect" class="form-label fw-semibold">Khóa học quan tâm</label>
-                            <select class="form-select" id="courseSelect" required>
-                                <option value="" selected disabled>Chọn khóa học...</option>
-                                <option value="MOS">Tin học văn phòng MOS</option>
-                                <option value="Java">Lập trình Java thực chiến</option>
-                                <option value="AI">Ứng dụng AI vào công việc</option>
-                                <option value="Combo">Combo Nhiều Khóa Học</option>
-                            </select>
-                        </div>
-                        <div class="d-grid mt-4">
-                            <button type="submit" class="btn btn-brand">Gửi Thông Tin Đăng Ký</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!-- ================= HEADER / NAVBAR ================= -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="#trang-chu">VINHOMES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Bật tắt menu điều hướng">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom nav-anchor" href="#trang-chu">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom nav-anchor" href="#ve-du-an">Về dự án</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom nav-anchor" href="#tien-ich">Tiện ích</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom nav-anchor" href="#vi-tri">Vị trí</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom nav-anchor" href="#lien-he">Liên hệ</a></li>
+        </ul>
+        <a href="#lien-he" class="btn btn-navy nav-anchor">Đăng ký tư vấn</a>
+      </div>
     </div>
+  </nav>
+</header>
 
-    <!-- Toast Notification -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="bi bi-check-circle-fill me-2"></i> Đăng ký thành công! Chúng tôi sẽ liên hệ lại với bạn sớm nhất.
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
+<main>
+  <!-- ================= HERO SECTION ================= -->
+  <section id="trang-chu" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="hero-badge">VINHOMES GRAND PARK</span>
+          <h1 class="hero-title">Kiến tạo chuẩn sống thượng lưu giữa lòng TP. Thủ Đức</h1>
+          <p class="hero-desc">
+            Đại đô thị công viên với mảng xanh rộng lớn, hồ cảnh quan và hệ sinh thái tiện ích khép kín.
+            Không gian sống hiện đại, an toàn và đẳng cấp dành cho gia đình bạn.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#lien-he" class="btn btn-navy nav-anchor">Nhận thông tin dự án</a>
+            <a href="#tien-ich" class="btn btn-outline-navy nav-anchor">Xem tiện ích</a>
+          </div>
         </div>
+        <div class="col-lg-6">
+          <div class="hero-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Khu biệt thự cao cấp Vinhomes Grand Park với không gian xanh mát">
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-5 col-md-6">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <i class="bi bi-cpu-fill fs-3 text-primary"></i>
-                        <span class="fs-4 fw-bold text-primary">TTTH EduTech</span>
-                    </div>
-                    <p class="mb-3">
-                        Trung tâm đào tạo tin học & công nghệ hàng đầu. Đội ngũ giảng viên giàu kinh nghiệm, lộ trình học thực tế giúp học viên làm chủ tri thức và mở rộng cơ hội nghề nghiệp.
-                    </p>
-                    <div class="social-icons">
-                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" title="TikTok"><i class="bi bi-tiktok"></i></a>
-                        <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5>Liên Kết Nhanh</h5>
-                    <ul>
-                        <li class="mb-2"><a href="#hero"><i class="bi bi-chevron-right me-1"></i>Trang chủ</a></li>
-                        <li class="mb-2"><a href="#features"><i class="bi bi-chevron-right me-1"></i>Tin học MOS</a></li>
-                        <li class="mb-2"><a href="#features"><i class="bi bi-chevron-right me-1"></i>Lập trình Java</a></li>
-                        <li class="mb-2"><a href="#features"><i class="bi bi-chevron-right me-1"></i>Ứng dụng AI</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <h5>Thông Tin Liên Hệ</h5>
-                    <p class="mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Cầu chử Y chợ quán</p>
-                    <p class="mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i>Hotline: 8.113.113</p>
-                    <p class="mb-2"><i class="bi bi-envelope-fill text-primary me-2"></i>Email: ttth@th.edu</p>
-                    <p class="mb-0"><i class="bi bi-clock-fill text-primary me-2"></i>Giờ làm việc: 08:00 - 21:00 (Thứ 2 - Chủ Nhật)</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="mb-0">&copy; 2026 TTTH EduTech. Tất cả quyền được bảo lưu. Thiết kế giao diện Landing Page.</p>
-            </div>
+  <!-- ================= PROJECT INTRODUCTION ================= -->
+  <section id="ve-du-an">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80" alt="Toàn cảnh đại đô thị Vinhomes Grand Park nhìn từ trên cao">
+          </div>
         </div>
-    </footer>
+        <div class="col-lg-6 reveal">
+          <h2 class="section-title">Vị trí chiến lược - Giá trị an cư bền vững</h2>
+          <p>
+            Tọa lạc tại cửa ngõ Đông TP.HCM, Vinhomes Grand Park sở hữu vị trí kết nối thuận tiện tới trung tâm
+            Quận 1, Quận 9 (cũ) và các tỉnh lân cận thông qua tuyến Metro số 1, Xa lộ Hà Nội và Vành đai 3.
+          </p>
+          <p>
+            Với quy mô hơn 271ha, dự án được quy hoạch bài bản theo mô hình "đô thị trong công viên", mang đến
+            không gian sống trong lành, an toàn, cùng hệ sinh thái tiện ích nội khu đầy đủ - nơi giá trị an cư
+            và tiềm năng đầu tư luôn song hành.
+          </p>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="bi bi-check-circle-fill" style="color:var(--primary)"></i> Diện tích quy hoạch hơn 271ha</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill" style="color:var(--primary)"></i> Kết nối trực tiếp tuyến Metro số 1</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill" style="color:var(--primary)"></i> Mảng xanh chiếm hơn 20% tổng diện tích</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap 5 JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ================= FEATURES SECTION ================= -->
+  <section style="background-color:#fff;">
+    <div class="container text-center">
+      <h2 class="section-title reveal">Những giá trị tạo nên chuẩn sống khác biệt</h2>
+      <p class="section-subtitle reveal">Vinhomes Grand Park mang đến trải nghiệm sống trọn vẹn với những giá trị cốt lõi được chăm chút tỉ mỉ.</p>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-gem"></i></div>
+            <h4>Lối sống thượng lưu</h4>
+            <p>Cộng đồng cư dân tinh hoa, không gian sống riêng tư, sang trọng và đẳng cấp bậc nhất khu Đông.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-stars"></i></div>
+            <h4>Tiện ích tối ưu</h4>
+            <p>Hệ sinh thái tiện ích trọn vẹn: giáo dục, y tế, thương mại, giải trí ngay trong nội khu.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Thông tin minh bạch</h4>
+            <p>Pháp lý rõ ràng, quy trình tư vấn và hỗ trợ khách hàng minh bạch trong suốt hành trình an cư.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Open modal and pre-select course
-        function openRegister(courseName) {
-            const modalElement = document.getElementById('registerModal');
-            const modal = new bootstrap.Modal(modalElement);
-            
-            const select = document.getElementById('courseSelect');
-            if (courseName.includes('MOS')) {
-                select.value = 'MOS';
-            } else if (courseName.includes('Java')) {
-                select.value = 'Java';
-            } else if (courseName.includes('AI')) {
-                select.value = 'AI';
-            }
-            
-            modal.show();
+  <!-- ================= AMENITIES GRID ================= -->
+  <section id="tien-ich">
+    <div class="container text-center">
+      <h2 class="section-title reveal">Hệ thống tiện ích nội khu</h2>
+      <p class="section-subtitle reveal">Trải nghiệm cuộc sống đủ đầy với hệ sinh thái tiện ích được quy hoạch đồng bộ và hiện đại.</p>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-tree"></i></div>
+            <h5>Công viên</h5>
+            <p>Mảng xanh trung tâm</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-water"></i></div>
+            <h5>Hồ bơi</h5>
+            <p>Bể bơi tiêu chuẩn</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-trophy"></i></div>
+            <h5>Khu thể thao</h5>
+            <p>Sân tập đa năng</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-emoji-smile"></i></div>
+            <h5>Khu vui chơi</h5>
+            <p>Sân chơi trẻ em</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-shop"></i></div>
+            <h5>TT Thương mại</h5>
+            <p>Mua sắm tiện lợi</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal">
+          <div class="amenity-item">
+            <div class="amenity-icon"><i class="bi bi-heart-pulse"></i></div>
+            <h5>Y tế & Giáo dục</h5>
+            <p>Trường học, bệnh viện</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY SECTION ================= -->
+  <section id="vi-tri" style="background-color:#fff;">
+    <div class="container text-center">
+      <h2 class="section-title reveal">Thư viện hình ảnh dự án</h2>
+      <p class="section-subtitle reveal">Chiêm ngưỡng không gian kiến trúc và nội thất đẳng cấp tại Vinhomes Grand Park.</p>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Kiến trúc mặt tiền khu căn hộ cao cấp Vinhomes Grand Park">
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="Không gian nội thất phòng khách sang trọng và hiện đại">
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80" alt="Không gian sống xanh mát với hồ cảnh quan trong khu đô thị">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA & CONTACT FORM ================= -->
+  <section id="lien-he">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <h2>Đăng ký nhận thông tin & bảng giá mới nhất</h2>
+            <p>Để lại thông tin, đội ngũ tư vấn viên của Vinhomes Grand Park sẽ liên hệ hỗ trợ bạn trong thời gian sớm nhất.</p>
+            <div class="d-flex align-items-center gap-2 mt-4">
+              <i class="bi bi-telephone-fill fs-4"></i>
+              <span class="fs-5 fw-bold">0900 000 000</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form id="contactForm" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control form-control-custom" id="fullName" placeholder="Họ và tên *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control form-control-custom" id="phone" placeholder="Số điện thoại *" required pattern="[0-9]{9,11}">
+                </div>
+                <div class="col-md-12">
+                  <input type="email" class="form-control form-control-custom" id="email" placeholder="Email *" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control form-control-custom" id="message" rows="3" placeholder="Nội dung cần tư vấn"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" class="btn-submit-form">Gửi yêu cầu tư vấn</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <h5>VINHOMES</h5>
+        <p>Đại đô thị công viên đẳng cấp tại TP. Thủ Đức, kiến tạo chuẩn sống xanh, hiện đại và bền vững cho cư dân tương lai.</p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h5>Liên kết nhanh</h5>
+        <a href="#trang-chu" class="nav-anchor">Trang chủ</a>
+        <a href="#ve-du-an" class="nav-anchor">Về dự án</a>
+        <a href="#tien-ich" class="nav-anchor">Tiện ích</a>
+        <a href="#vi-tri" class="nav-anchor">Vị trí</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Chính sách</h5>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#lien-he" class="nav-anchor">Liên hệ hỗ trợ</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Liên hệ</h5>
+        <a href="tel:0900000000"><i class="bi bi-telephone-fill me-2"></i>0900 000 000</a>
+        <a href="mailto:contact@example.com"><i class="bi bi-envelope-fill me-2"></i>contact@example.com</a>
+        <a href="#"><i class="bi bi-geo-alt-fill me-2"></i>TP. Thủ Đức, TP.HCM</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Vinhomes Grand Park. Trang thông tin mang tính chất tham khảo, không phải kênh giao dịch chính thức.
+    </div>
+  </div>
+</footer>
+
+<!-- Popup đăng ký tư vấn thành công -->
+<div class="popup-overlay" id="successPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-box">
+    <button type="button" class="popup-close" id="popupCloseBtn" aria-label="Đóng thông báo">&times;</button>
+    <div class="popup-icon-wrap">
+      <i class="bi bi-hand-index-thumb-fill"></i>
+    </div>
+    <h3 id="popupTitle" class="popup-title">Đăng ký tư vấn thành công!</h3>
+    <p class="popup-desc">
+      Cảm ơn bạn đã tin chọn Vinhomes Grand Park - dự án đáng sống <strong>số 1</strong> khu Đông TP.HCM.
+      Đội ngũ tư vấn viên sẽ liên hệ với bạn trong thời gian sớm nhất.
+    </p>
+    <button type="button" class="btn-popup-ok" id="popupOkBtn">
+      <i class="bi bi-hand-index-thumb-fill"></i> Tuyệt vời, đã hiểu!
+    </button>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle JS (Popper + Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // ===== Footer year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Scroll Reveal Animation (IntersectionObserver) =====
+    var revealEls = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { observer.observe(el); });
 
-        // Handle form submission in modal
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            const modalElement = document.getElementById('registerModal');
-            const modal = bootstrap.Modal.getInstance(modalElement);
-            if (modal) {
-                modal.hide();
-            }
-
-            // Show success toast
-            const toastElement = document.getElementById('successToast');
-            const toast = new bootstrap.Toast(toastElement);
-            toast.show();
-
-            // Reset form
-            document.getElementById('consultForm').reset();
+    // ===== Smooth Scroll cho Navbar =====
+    var anchors = document.querySelectorAll('.nav-anchor');
+    anchors.forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var offset = 80;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
         }
-		ấdsadsadsa
-    </script>
+      });
+    });
+
+    // ===== Auto-close Mobile Menu khi bấm mục menu =====
+    var navbarCollapseEl = document.getElementById('mainNavbar');
+    var navbarCollapse = navbarCollapseEl ? new bootstrap.Collapse(navbarCollapseEl, { toggle: false }) : null;
+    document.querySelectorAll('#mainNavbar .nav-link, #mainNavbar .btn').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (navbarCollapseEl.classList.contains('show') && navbarCollapse) {
+          navbarCollapse.hide();
+        }
+      });
+    });
+
+    // ===== Popup đăng ký tư vấn thành công =====
+    var popup = document.getElementById('successPopup');
+    var popupCloseBtn = document.getElementById('popupCloseBtn');
+    var popupOkBtn = document.getElementById('popupOkBtn');
+
+    function openPopup() {
+      popup.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      popup.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    popupCloseBtn.addEventListener('click', closePopup);
+    popupOkBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) closePopup();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && popup.classList.contains('show')) closePopup();
+    });
+
+    // ===== Form Handling & Validation =====
+    var form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var fullName = document.getElementById('fullName');
+      var phone = document.getElementById('phone');
+      var email = document.getElementById('email');
+
+      var isValid = true;
+
+      [fullName, phone, email].forEach(function (field) {
+        field.classList.remove('is-invalid');
+      });
+
+      if (fullName.value.trim().length < 2) {
+        fullName.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      var phonePattern = /^[0-9]{9,11}$/;
+      if (!phonePattern.test(phone.value.trim())) {
+        phone.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        email.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        return;
+      }
+
+      // Hiện popup thông báo thành công (không load lại trang)
+      openPopup();
+      form.reset();
+    });
+
+  });
+</script>
+
 </body>
 </html>
